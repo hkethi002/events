@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Webhooks Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed"> <a class="pure-menu-heading" href="https://purecss.io/layouts/marketing/">Your Site</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"> <a href="/" class="pure-menu-link">Home</a> </li>
+                <li class="pure-menu-item pure-menu-selected"> <a href="/webhooks" class="pure-menu-link">Webhooks</a> </li>
+                <li class="pure-menu-item"> <a href="/status" class="pure-menu-link">Status</a> </li>
+            </ul>
+        </div>
+    </div>
+    </br>
+    </br>
+    </br>
+    <div class="pure-g">
+      <div class="pure-u-1-3"></div>
+      <div class="pure-u-1-3">
+        <table class="pure-table pure-table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>METHOD</th>
+              <th>url</th>
+            </tr>
+          </thead>
+          <tbody>
+          <%= for item <- webhooks do %>
+            <tr>
+              <td></td>
+              <td><%= String.upcase(to_string(item.method)) %></td>
+              <td><%= item.url %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="pure-u-1-3"></div>
+    </div>
+  </body>
+</html>
