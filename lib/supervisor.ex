@@ -1,4 +1,5 @@
 defmodule Events.Supervisor do
+  require Logger
   use Supervisor
 
   def start_link(opts) do
